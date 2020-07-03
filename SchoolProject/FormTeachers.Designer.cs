@@ -203,6 +203,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(629, 483);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBoxEmail);

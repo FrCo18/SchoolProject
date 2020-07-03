@@ -135,6 +135,7 @@
             // 
             // comboBoxTeachers
             // 
+            this.comboBoxTeachers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTeachers.FormattingEnabled = true;
             this.comboBoxTeachers.Location = new System.Drawing.Point(12, 211);
             this.comboBoxTeachers.Name = "comboBoxTeachers";
@@ -143,6 +144,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(413, 12);
             this.pictureBox1.Name = "pictureBox1";
@@ -155,6 +157,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(627, 496);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.comboBoxTeachers);

@@ -75,6 +75,14 @@ namespace SchoolProject
                 listViewMarks.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             }
         }
+        private void OnlyNumber(object sender, KeyPressEventArgs e)
+        {
+            char sym = e.KeyChar;
+            if (!Char.IsDigit(sym) && sym != 8 || sym == 127)
+            {
+                e.Handled = true;
+            }
+        }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {

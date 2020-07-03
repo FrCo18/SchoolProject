@@ -39,7 +39,7 @@
             this.labelFirstName = new System.Windows.Forms.Label();
             this.textBoxMiddleName = new System.Windows.Forms.TextBox();
             this.labelMiddleName = new System.Windows.Forms.Label();
-            this.textBoxDateOfBirth = new System.Windows.Forms.TextBox();
+            this.textBoxYear = new System.Windows.Forms.TextBox();
             this.labelDateOfBirth = new System.Windows.Forms.Label();
             this.LastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.FirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -49,8 +49,10 @@
             this.listViewMarks = new System.Windows.Forms.ListView();
             this.Subject = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Mark = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.textBoxMarks = new System.Windows.Forms.TextBox();
+            this.textBoxAverageMark = new System.Windows.Forms.TextBox();
             this.labelAverageMark = new System.Windows.Forms.Label();
+            this.textBoxNumber = new System.Windows.Forms.TextBox();
+            this.textBoxMonth = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +60,7 @@
             // 
             this.buttonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(213)))), ((int)(((byte)(202)))));
             this.buttonAdd.ForeColor = System.Drawing.Color.Black;
-            this.buttonAdd.Location = new System.Drawing.Point(187, 394);
+            this.buttonAdd.Location = new System.Drawing.Point(271, 395);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(133, 70);
@@ -71,7 +73,7 @@
             // 
             this.buttonEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(213)))), ((int)(((byte)(202)))));
             this.buttonEdit.ForeColor = System.Drawing.Color.Black;
-            this.buttonEdit.Location = new System.Drawing.Point(331, 394);
+            this.buttonEdit.Location = new System.Drawing.Point(415, 395);
             this.buttonEdit.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(133, 70);
@@ -84,7 +86,7 @@
             // 
             this.buttonDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(169)))), ((int)(((byte)(175)))));
             this.buttonDel.ForeColor = System.Drawing.Color.Black;
-            this.buttonDel.Location = new System.Drawing.Point(475, 394);
+            this.buttonDel.Location = new System.Drawing.Point(559, 395);
             this.buttonDel.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.buttonDel.Name = "buttonDel";
             this.buttonDel.Size = new System.Drawing.Size(133, 70);
@@ -102,7 +104,7 @@
             this.DateOfBirth});
             this.listViewStudents.GridLines = true;
             this.listViewStudents.HideSelection = false;
-            this.listViewStudents.Location = new System.Drawing.Point(203, 104);
+            this.listViewStudents.Location = new System.Drawing.Point(287, 105);
             this.listViewStudents.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listViewStudents.Name = "listViewStudents";
             this.listViewStudents.Size = new System.Drawing.Size(405, 280);
@@ -159,17 +161,18 @@
             this.labelMiddleName.TabIndex = 9;
             this.labelMiddleName.Text = "Отчество";
             // 
-            // textBoxDateOfBirth
+            // textBoxYear
             // 
-            this.textBoxDateOfBirth.Location = new System.Drawing.Point(27, 312);
-            this.textBoxDateOfBirth.Name = "textBoxDateOfBirth";
-            this.textBoxDateOfBirth.Size = new System.Drawing.Size(143, 27);
-            this.textBoxDateOfBirth.TabIndex = 12;
+            this.textBoxYear.Location = new System.Drawing.Point(12, 313);
+            this.textBoxYear.Name = "textBoxYear";
+            this.textBoxYear.Size = new System.Drawing.Size(54, 27);
+            this.textBoxYear.TabIndex = 12;
+            this.textBoxYear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
             // 
             // labelDateOfBirth
             // 
             this.labelDateOfBirth.AutoSize = true;
-            this.labelDateOfBirth.Location = new System.Drawing.Point(23, 290);
+            this.labelDateOfBirth.Location = new System.Drawing.Point(8, 291);
             this.labelDateOfBirth.Name = "labelDateOfBirth";
             this.labelDateOfBirth.Size = new System.Drawing.Size(115, 19);
             this.labelDateOfBirth.TabIndex = 11;
@@ -197,7 +200,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(450, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(806, 14);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(158, 84);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -211,7 +214,7 @@
             this.Mark});
             this.listViewMarks.GridLines = true;
             this.listViewMarks.HideSelection = false;
-            this.listViewMarks.Location = new System.Drawing.Point(616, 104);
+            this.listViewMarks.Location = new System.Drawing.Point(700, 105);
             this.listViewMarks.Margin = new System.Windows.Forms.Padding(4);
             this.listViewMarks.Name = "listViewMarks";
             this.listViewMarks.Size = new System.Drawing.Size(263, 280);
@@ -229,32 +232,51 @@
             this.Mark.Text = "Оценка";
             this.Mark.Width = 137;
             // 
-            // textBoxMarks
+            // textBoxAverageMark
             // 
-            this.textBoxMarks.Location = new System.Drawing.Point(616, 417);
-            this.textBoxMarks.Name = "textBoxMarks";
-            this.textBoxMarks.Size = new System.Drawing.Size(168, 27);
-            this.textBoxMarks.TabIndex = 15;
+            this.textBoxAverageMark.Location = new System.Drawing.Point(700, 418);
+            this.textBoxAverageMark.Name = "textBoxAverageMark";
+            this.textBoxAverageMark.Size = new System.Drawing.Size(168, 27);
+            this.textBoxAverageMark.TabIndex = 15;
             // 
             // labelAverageMark
             // 
             this.labelAverageMark.AutoSize = true;
-            this.labelAverageMark.Location = new System.Drawing.Point(616, 395);
+            this.labelAverageMark.Location = new System.Drawing.Point(700, 396);
             this.labelAverageMark.Name = "labelAverageMark";
             this.labelAverageMark.Size = new System.Drawing.Size(99, 19);
             this.labelAverageMark.TabIndex = 16;
             this.labelAverageMark.Text = "Средний бал";
             // 
+            // textBoxNumber
+            // 
+            this.textBoxNumber.Location = new System.Drawing.Point(73, 313);
+            this.textBoxNumber.Name = "textBoxNumber";
+            this.textBoxNumber.Size = new System.Drawing.Size(54, 27);
+            this.textBoxNumber.TabIndex = 17;
+            this.textBoxNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
+            // 
+            // textBoxMonth
+            // 
+            this.textBoxMonth.Location = new System.Drawing.Point(133, 313);
+            this.textBoxMonth.Name = "textBoxMonth";
+            this.textBoxMonth.Size = new System.Drawing.Size(54, 27);
+            this.textBoxMonth.TabIndex = 18;
+            this.textBoxMonth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
+            // 
             // FormStudents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 483);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
+            this.ClientSize = new System.Drawing.Size(976, 483);
+            this.Controls.Add(this.textBoxMonth);
+            this.Controls.Add(this.textBoxNumber);
             this.Controls.Add(this.labelAverageMark);
-            this.Controls.Add(this.textBoxMarks);
+            this.Controls.Add(this.textBoxAverageMark);
             this.Controls.Add(this.listViewMarks);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBoxDateOfBirth);
+            this.Controls.Add(this.textBoxYear);
             this.Controls.Add(this.labelDateOfBirth);
             this.Controls.Add(this.textBoxMiddleName);
             this.Controls.Add(this.labelMiddleName);
@@ -289,7 +311,7 @@
         private System.Windows.Forms.Label labelFirstName;
         private System.Windows.Forms.TextBox textBoxMiddleName;
         private System.Windows.Forms.Label labelMiddleName;
-        private System.Windows.Forms.TextBox textBoxDateOfBirth;
+        private System.Windows.Forms.TextBox textBoxYear;
         private System.Windows.Forms.Label labelDateOfBirth;
         private System.Windows.Forms.ColumnHeader LastName;
         private System.Windows.Forms.ColumnHeader FirstName;
@@ -299,7 +321,9 @@
         private System.Windows.Forms.ListView listViewMarks;
         private System.Windows.Forms.ColumnHeader Subject;
         private System.Windows.Forms.ColumnHeader Mark;
-        private System.Windows.Forms.TextBox textBoxMarks;
+        private System.Windows.Forms.TextBox textBoxAverageMark;
         private System.Windows.Forms.Label labelAverageMark;
+        private System.Windows.Forms.TextBox textBoxNumber;
+        private System.Windows.Forms.TextBox textBoxMonth;
     }
 }

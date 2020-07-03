@@ -48,6 +48,7 @@
             // 
             // comboBoxStudents
             // 
+            this.comboBoxStudents.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStudents.FormattingEnabled = true;
             this.comboBoxStudents.Location = new System.Drawing.Point(7, 192);
             this.comboBoxStudents.Name = "comboBoxStudents";
@@ -145,6 +146,7 @@
             // 
             // comboBoxSubjects
             // 
+            this.comboBoxSubjects.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSubjects.FormattingEnabled = true;
             this.comboBoxSubjects.Location = new System.Drawing.Point(7, 118);
             this.comboBoxSubjects.Name = "comboBoxSubjects";
@@ -157,6 +159,7 @@
             this.textBoxMark.Name = "textBoxMark";
             this.textBoxMark.Size = new System.Drawing.Size(224, 27);
             this.textBoxMark.TabIndex = 34;
+            this.textBoxMark.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
             // 
             // labelMark
             // 
@@ -181,6 +184,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(629, 476);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelMark);

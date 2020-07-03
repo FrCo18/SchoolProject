@@ -33,13 +33,13 @@ namespace SchoolProject
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            if (textBoxLastName.Text != "" && textBoxFirstName.Text != "" && textBoxMiddleName.Text != "" && textBoxDateOfBirth.Text != "")
+            if (textBoxLastName.Text != "" && textBoxFirstName.Text != "" && textBoxMiddleName.Text != "" && textBoxYear.Text != "")
             {
                 Students students = new Students();
                 students.firstname = textBoxFirstName.Text;
                 students.lastname = textBoxLastName.Text;
                 students.middlename = textBoxMiddleName.Text;
-                students.date_of_birth = textBoxDateOfBirth.Text;
+                students.date_of_birth = textBoxYear.Text+"."+textBoxNumber.Text+"."+textBoxMonth.Text;
                 Program.DB.Students.Add(students);
                 Program.DB.SaveChanges();
                 ShowStudents();
@@ -50,13 +50,13 @@ namespace SchoolProject
         {
             if (listViewStudents.SelectedItems.Count == 1)
             {
-                if (textBoxLastName.Text != "" && textBoxFirstName.Text != "" && textBoxMiddleName.Text != "" && textBoxDateOfBirth.Text != "")
+                if (textBoxLastName.Text != "" && textBoxFirstName.Text != "" && textBoxMiddleName.Text != "" && textBoxYear.Text != "")
                 {
                     Students students = listViewStudents.SelectedItems[0].Tag as Students;
                     students.firstname = textBoxFirstName.Text;
                     students.lastname = textBoxLastName.Text;
                     students.middlename = textBoxMiddleName.Text;
-                    students.date_of_birth = textBoxDateOfBirth.Text;
+                    students.date_of_birth = textBoxYear.Text;
                     Program.DB.SaveChanges();
                     ShowStudents();
                 }
@@ -71,7 +71,9 @@ namespace SchoolProject
                 textBoxLastName.Text = students.lastname;
                 textBoxFirstName.Text = students.firstname;
                 textBoxMiddleName.Text = students.middlename;
-                textBoxDateOfBirth.Text = students.date_of_birth;
+                textBoxYear.Text = students.date_of_birth.ToString().Split('.')[0];
+                textBoxNumber.Text = students.date_of_birth.ToString().Split('.')[1];
+                textBoxMonth.Text = students.date_of_birth.ToString().Split('.')[2];
 
                 int i=0;
                 int sum = 0;
@@ -90,7 +92,15 @@ namespace SchoolProject
                         sum += marks.mark;
                     }
                 }
-                textBoxMarks.Text = (sum / i).ToString();
+                textBoxAverageMark.Text = (sum / i).ToString();
+            }
+        }
+        private void OnlyNumber(object sender, KeyPressEventArgs e)
+        {
+            char sym = e.KeyChar;
+            if (!Char.IsDigit(sym) && sym != 8 || sym == 127)
+            {
+                e.Handled = true;
             }
         }
 
