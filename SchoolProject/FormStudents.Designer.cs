@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStudents));
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonDel = new System.Windows.Forms.Button();
@@ -44,6 +45,13 @@
             this.FirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.MidleName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DateOfBirth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.listViewMarks = new System.Windows.Forms.ListView();
+            this.Subject = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Mark = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.textBoxMarks = new System.Windows.Forms.TextBox();
+            this.labelAverageMark = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonAdd
@@ -186,11 +194,66 @@
             this.DateOfBirth.Text = "Дата рождения";
             this.DateOfBirth.Width = 128;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(450, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(158, 84);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
+            // listViewMarks
+            // 
+            this.listViewMarks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Subject,
+            this.Mark});
+            this.listViewMarks.GridLines = true;
+            this.listViewMarks.HideSelection = false;
+            this.listViewMarks.Location = new System.Drawing.Point(616, 104);
+            this.listViewMarks.Margin = new System.Windows.Forms.Padding(4);
+            this.listViewMarks.Name = "listViewMarks";
+            this.listViewMarks.Size = new System.Drawing.Size(263, 280);
+            this.listViewMarks.TabIndex = 14;
+            this.listViewMarks.UseCompatibleStateImageBehavior = false;
+            this.listViewMarks.View = System.Windows.Forms.View.Details;
+            // 
+            // Subject
+            // 
+            this.Subject.Text = "Предмет";
+            this.Subject.Width = 88;
+            // 
+            // Mark
+            // 
+            this.Mark.Text = "Оценка";
+            this.Mark.Width = 137;
+            // 
+            // textBoxMarks
+            // 
+            this.textBoxMarks.Location = new System.Drawing.Point(616, 417);
+            this.textBoxMarks.Name = "textBoxMarks";
+            this.textBoxMarks.Size = new System.Drawing.Size(168, 27);
+            this.textBoxMarks.TabIndex = 15;
+            // 
+            // labelAverageMark
+            // 
+            this.labelAverageMark.AutoSize = true;
+            this.labelAverageMark.Location = new System.Drawing.Point(616, 395);
+            this.labelAverageMark.Name = "labelAverageMark";
+            this.labelAverageMark.Size = new System.Drawing.Size(99, 19);
+            this.labelAverageMark.TabIndex = 16;
+            this.labelAverageMark.Text = "Средний бал";
+            // 
             // FormStudents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 483);
+            this.ClientSize = new System.Drawing.Size(894, 483);
+            this.Controls.Add(this.labelAverageMark);
+            this.Controls.Add(this.textBoxMarks);
+            this.Controls.Add(this.listViewMarks);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBoxDateOfBirth);
             this.Controls.Add(this.labelDateOfBirth);
             this.Controls.Add(this.textBoxMiddleName);
@@ -208,6 +271,7 @@
             this.Name = "FormStudents";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ученики";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,5 +295,11 @@
         private System.Windows.Forms.ColumnHeader FirstName;
         private System.Windows.Forms.ColumnHeader MidleName;
         private System.Windows.Forms.ColumnHeader DateOfBirth;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ListView listViewMarks;
+        private System.Windows.Forms.ColumnHeader Subject;
+        private System.Windows.Forms.ColumnHeader Mark;
+        private System.Windows.Forms.TextBox textBoxMarks;
+        private System.Windows.Forms.Label labelAverageMark;
     }
 }

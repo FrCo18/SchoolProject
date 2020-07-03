@@ -72,6 +72,25 @@ namespace SchoolProject
                 textBoxFirstName.Text = students.firstname;
                 textBoxMiddleName.Text = students.middlename;
                 textBoxDateOfBirth.Text = students.date_of_birth;
+
+                int i=0;
+                int sum = 0;
+                listViewMarks.Items.Clear();
+                foreach (Marks marks in Program.DB.Marks)
+                {
+                    if (students.id_student == marks.id_student)
+                    {
+                            ListViewItem item = new ListViewItem(new string[] {
+                       marks.Subjects.name_subject, marks.mark.ToString()
+                        });
+                            item.Tag = marks;
+                            listViewMarks.Items.Add(item);
+                            listViewMarks.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+                        i++;
+                        sum += marks.mark;
+                    }
+                }
+                textBoxMarks.Text = (sum / i).ToString();
             }
         }
 

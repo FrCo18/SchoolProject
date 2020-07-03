@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMarks));
             this.comboBoxStudents = new System.Windows.Forms.ComboBox();
             this.labelStudents = new System.Windows.Forms.Label();
             this.labelSubject = new System.Windows.Forms.Label();
@@ -41,12 +42,14 @@
             this.comboBoxSubjects = new System.Windows.Forms.ComboBox();
             this.textBoxMark = new System.Windows.Forms.TextBox();
             this.labelMark = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBoxStudents
             // 
             this.comboBoxStudents.FormattingEnabled = true;
-            this.comboBoxStudents.Location = new System.Drawing.Point(25, 180);
+            this.comboBoxStudents.Location = new System.Drawing.Point(7, 192);
             this.comboBoxStudents.Name = "comboBoxStudents";
             this.comboBoxStudents.Size = new System.Drawing.Size(224, 27);
             this.comboBoxStudents.TabIndex = 32;
@@ -54,7 +57,7 @@
             // labelStudents
             // 
             this.labelStudents.AutoSize = true;
-            this.labelStudents.Location = new System.Drawing.Point(21, 158);
+            this.labelStudents.Location = new System.Drawing.Point(3, 170);
             this.labelStudents.Name = "labelStudents";
             this.labelStudents.Size = new System.Drawing.Size(67, 19);
             this.labelStudents.TabIndex = 31;
@@ -63,7 +66,7 @@
             // labelSubject
             // 
             this.labelSubject.AutoSize = true;
-            this.labelSubject.Location = new System.Drawing.Point(25, 84);
+            this.labelSubject.Location = new System.Drawing.Point(7, 96);
             this.labelSubject.Name = "labelSubject";
             this.labelSubject.Size = new System.Drawing.Size(69, 19);
             this.labelSubject.TabIndex = 29;
@@ -77,7 +80,7 @@
             this.Mark});
             this.listViewMarks.GridLines = true;
             this.listViewMarks.HideSelection = false;
-            this.listViewMarks.Location = new System.Drawing.Point(256, 96);
+            this.listViewMarks.Location = new System.Drawing.Point(238, 108);
             this.listViewMarks.Margin = new System.Windows.Forms.Padding(4);
             this.listViewMarks.Name = "listViewMarks";
             this.listViewMarks.Size = new System.Drawing.Size(371, 280);
@@ -105,7 +108,7 @@
             // 
             this.buttonDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(169)))), ((int)(((byte)(175)))));
             this.buttonDel.ForeColor = System.Drawing.Color.Black;
-            this.buttonDel.Location = new System.Drawing.Point(494, 386);
+            this.buttonDel.Location = new System.Drawing.Point(476, 398);
             this.buttonDel.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.buttonDel.Name = "buttonDel";
             this.buttonDel.Size = new System.Drawing.Size(133, 70);
@@ -118,7 +121,7 @@
             // 
             this.buttonEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(213)))), ((int)(((byte)(202)))));
             this.buttonEdit.ForeColor = System.Drawing.Color.Black;
-            this.buttonEdit.Location = new System.Drawing.Point(350, 386);
+            this.buttonEdit.Location = new System.Drawing.Point(332, 398);
             this.buttonEdit.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(133, 70);
@@ -131,7 +134,7 @@
             // 
             this.buttonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(213)))), ((int)(((byte)(202)))));
             this.buttonAdd.ForeColor = System.Drawing.Color.Black;
-            this.buttonAdd.Location = new System.Drawing.Point(206, 386);
+            this.buttonAdd.Location = new System.Drawing.Point(188, 398);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(133, 70);
@@ -143,14 +146,14 @@
             // comboBoxSubjects
             // 
             this.comboBoxSubjects.FormattingEnabled = true;
-            this.comboBoxSubjects.Location = new System.Drawing.Point(25, 106);
+            this.comboBoxSubjects.Location = new System.Drawing.Point(7, 118);
             this.comboBoxSubjects.Name = "comboBoxSubjects";
             this.comboBoxSubjects.Size = new System.Drawing.Size(224, 27);
             this.comboBoxSubjects.TabIndex = 33;
             // 
             // textBoxMark
             // 
-            this.textBoxMark.Location = new System.Drawing.Point(25, 263);
+            this.textBoxMark.Location = new System.Drawing.Point(7, 275);
             this.textBoxMark.Name = "textBoxMark";
             this.textBoxMark.Size = new System.Drawing.Size(224, 27);
             this.textBoxMark.TabIndex = 34;
@@ -158,17 +161,28 @@
             // labelMark
             // 
             this.labelMark.AutoSize = true;
-            this.labelMark.Location = new System.Drawing.Point(21, 241);
+            this.labelMark.Location = new System.Drawing.Point(3, 253);
             this.labelMark.Name = "labelMark";
             this.labelMark.Size = new System.Drawing.Size(61, 19);
             this.labelMark.TabIndex = 35;
             this.labelMark.Text = "Оценка";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(444, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(165, 89);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 36;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormMarks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 457);
+            this.ClientSize = new System.Drawing.Size(629, 476);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelMark);
             this.Controls.Add(this.textBoxMark);
             this.Controls.Add(this.comboBoxSubjects);
@@ -184,6 +198,7 @@
             this.Name = "FormMarks";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Марки";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,5 +219,6 @@
         private System.Windows.Forms.ComboBox comboBoxSubjects;
         private System.Windows.Forms.TextBox textBoxMark;
         private System.Windows.Forms.Label labelMark;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

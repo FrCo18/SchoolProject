@@ -98,8 +98,8 @@ namespace SchoolProject
             {
                 if (listViewMarks.SelectedItems.Count == 1)
                 {
-                    Subjects subjects = listViewMarks.SelectedItems[0].Tag as Subjects;
-                    Program.DB.Subjects.Remove(subjects);
+                    Marks marks = listViewMarks.SelectedItems[0].Tag as Marks;
+                    Program.DB.Marks.Remove(marks);
                     Program.DB.SaveChanges();
                     ShowMarks();
                 }
